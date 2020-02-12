@@ -6,6 +6,7 @@
     <modules>
         <module>EurekaServer01</module>
         <module>UserProvdier01</module>
+        <module>UserWeb01</module>
     </modules>
 
 
