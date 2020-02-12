@@ -23,25 +23,27 @@ public class UserServiceImpl implements UserService {
      * 通过客户端负载均衡器获取生产者服务器基础地址
      * @return
      */
-    public String getServerUrl(){
+    public String getServerUrl() {
         //通过客户端调用器查找指定服务
         List<ServiceInstance> instList = discoveryClient.getInstances("USERPROVIDER");
         //获取第一个服务器
         ServiceInstance inst = instList.get(0);
         //获取服务提供者服务器ip、端口号
         String ip = inst.getHost();
-        int prot = inst.getPort();
+        int port = inst.getPort();
         //拼接调用地址
-        String url = "http://"+ ip + ":" + prot + "/user";
+        String url="http://"+ip+":"+port+ "/user";
         return url;
     }
 
 
+
     @Override
     public Map getUserMap() {
-        Map map = restTemplate.getForObject(getServerUrl()+"/getall",Map.class);
+        Map map = restTemplate.getForObject(getServerUrl()+"/getall", Map.class);
         return map;
     }
+
 
     @Override
     public void createUser(User user) {

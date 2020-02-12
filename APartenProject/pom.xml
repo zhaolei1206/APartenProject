@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>EurekaServer01</module>
+        <module>EurekaServer02</module>
         <module>UserProvdier01</module>
         <module>UserWeb01</module>
     </modules>

@@ -5,10 +5,7 @@ import com.offcn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -21,11 +18,13 @@ public class UserControllerWeb {
     @GetMapping("/")
     public String getUserList(Model model){
         Map map = userService.getUserMap();
-        List<User> list = (List<User>) map.get("list");
+        List<User> list=(List<User>) map.get("list");
         model.addAttribute("page", list);
-        model.addAttribute("ProviderVersion",map.get("ProviderVersion"));
+        model.addAttribute("ProviderVersion", map.get("ProviderVersion"));
+
         return "user/list";
     }
+
     /***
      * 跳转到新增用户界面
      * @param user

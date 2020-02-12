@@ -11,11 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    private UserService userService;
+    UserService userService;
 
     /***
      * 获取全部用户信息

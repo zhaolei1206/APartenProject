@@ -10,8 +10,9 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
-    private UserDao userDao;
+    UserDao userDao;
 
     @Override
     public List<User> getUserList() {
@@ -32,10 +33,14 @@ public class UserServiceImpl implements UserService {
     public void updateUser(Long id, User user) {
         user.setId(id);
         userDao.saveAndFlush(user);
+
     }
 
     @Override
     public void deleteUser(Long id) {
         userDao.deleteById(id);
     }
+
 }
+
+

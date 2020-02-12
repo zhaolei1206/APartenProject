@@ -9,11 +9,14 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class AppStartApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(AppStartApplication.class,args);
+        SpringApplication.run(AppStartApplication.class, args);
     }
     @Bean
-    public RestTemplate getRestTemplate(){
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
+
 }
+
