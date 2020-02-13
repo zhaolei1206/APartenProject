@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/user")
@@ -29,6 +30,13 @@ public class UserController {
         map.put("list", list);
         String ProviderVersion="用户服务UserProvdier001:0.01V";
         map.put("ProviderVersion", ProviderVersion);
+        try {
+            //让主线程随机睡眠0--1200毫秒，模拟发生熔断
+            Thread.sleep(new Random().nextInt(1200));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return map;
     }
     /***

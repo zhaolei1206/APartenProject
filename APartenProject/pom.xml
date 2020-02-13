@@ -11,8 +11,9 @@
         <module>UserWeb01</module>
         <module>UserWeb02</module>
         <module>UserWeb03</module>
-
         <module>UserWeb04</module>
+        <module>hystrix-dashboard</module>
+
     </modules>
 
 
@@ -51,7 +52,5 @@
             </plugin>
         </plugins>
     </build>
-    <!--111111-->
-    <!--22222222-->
 
 </project>

@@ -21,6 +21,5 @@ public class AppStartApplication {
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
-
 }
 

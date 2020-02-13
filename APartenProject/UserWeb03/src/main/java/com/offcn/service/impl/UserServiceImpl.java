@@ -1,5 +1,6 @@
 package com.offcn.service.impl;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.offcn.po.User;
 import com.offcn.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,9 +41,23 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    @HystrixCommand(fallbackMethod = "getUserMapFallbackMethod")
     public Map<String, Object> getUserMap() {
         Map map = restTemplate.getForObject(url+"/user/getall", Map.class);		return map;
     }
+    /**
+     * 获取全部用户数据，发生熔断后调用方法
+     * @return
+     */
+    public Map<String, Object> getUserMapFallbackMethod(){
+        Map map = new HashMap();
+        map.put("list", new ArrayList<>());
+        map.put("ProviderVersion", "获取远程调用失败");
+        return map;
+
+    }
+
+
     @Override
     public void createUser(User user) {
         restTemplate.postForObject(url+"/user/save", user,String.class);

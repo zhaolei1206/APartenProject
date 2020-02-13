@@ -21,7 +21,7 @@ USERPROVIDER:
     # Ribbon的连接超时时间
     ConnectTimeout: 1000
     # Ribbon的数据读取超时时间
-    ReadTimeout: 1000
+    ReadTimeout: 250
     # 是否对所有操作都进行重试
     OkToRetryOnAllOperations: true
     # 切换实例的重试次数
@@ -29,3 +29,18 @@ USERPROVIDER:
     # 对当前实例的重试次数
     MaxAutoRetries: 1
 
+#设置消费者指定包日志级别
+logging:
+  level.com.offcn: debug
+# 开启Feign的熔断功能
+feign:
+  hystrix:
+    enabled: true
+#设定Hystrix熔断超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000

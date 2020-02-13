@@ -10,6 +10,7 @@
         <module name="UserWeb03" />
         <module name="UserWeb02" />
         <module name="UserWeb01" />
+        <module name="hystrix-dashboard" />
         <module name="EurekaServer02" />
         <module name="EurekaServer01" />
         <module name="UserProvdier01" />
@@ -35,6 +36,7 @@
       <module name="UserWeb02 (1)" options="-parameters" />
       <module name="UserWeb03" options="-parameters" />
       <module name="UserWeb04" options="-parameters" />
+      <module name="hystrix-dashboard" options="-parameters" />
     </option>
   </component>
 </project>

@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/user")
@@ -29,6 +30,7 @@ public class UserController {
         map.put("list", list);
         String ProviderVersion="UserProvdier002:0.01V";
         map.put("ProviderVersion", ProviderVersion);
+
         return map;
     }
     /***

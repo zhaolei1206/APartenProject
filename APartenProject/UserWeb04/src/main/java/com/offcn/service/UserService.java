@@ -1,11 +1,13 @@
 package com.offcn.service;
 
+import com.offcn.config.FeignConfig;
 import com.offcn.po.User;
+import com.offcn.service.impl.UserServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-@FeignClient("USERPROVIDER")
+@FeignClient(value = "USERPROVIDER",configuration = FeignConfig.class,fallback = UserServiceImpl.class)
 public interface UserService {
     @GetMapping("//user/getall")
     public Map getUserMap();
