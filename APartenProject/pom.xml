@@ -9,6 +9,10 @@
         <module>UserProvdier01</module>
         <module>UserProvdier02</module>
         <module>UserWeb01</module>
+        <module>UserWeb02</module>
+        <module>UserWeb03</module>
+
+        <module>UserWeb04</module>
     </modules>
 
 

@@ -8,5 +8,7 @@ spring:
 #EurekaServer配置
 eureka:
   client:
+    registerWithEureka: false
+    fetchRegistry: false
     service-url:
       defaultZone: http://localhost:10086/eureka #指向高可用另外一台Eureka服务器
