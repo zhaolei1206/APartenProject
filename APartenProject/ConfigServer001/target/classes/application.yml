@@ -1,0 +1,13 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhaolei1206/java1203-configserver.git
+          search-paths: offcn/config-repo
+          username: zhaolei1206
+          password: "zhaolei060012"

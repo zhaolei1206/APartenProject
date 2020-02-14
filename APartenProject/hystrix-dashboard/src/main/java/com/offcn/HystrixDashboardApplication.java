@@ -11,4 +11,5 @@ public class HystrixDashboardApplication {
         SpringApplication.run(HystrixDashboardApplication.class, args);
     }
 
+
 }

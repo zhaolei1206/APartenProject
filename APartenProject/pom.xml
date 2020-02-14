@@ -13,6 +13,7 @@
         <module>UserWeb03</module>
         <module>UserWeb04</module>
         <module>hystrix-dashboard</module>
+        <module>ConfigServer001</module>
 
     </modules>
 

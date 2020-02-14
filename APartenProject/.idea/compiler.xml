@@ -14,6 +14,7 @@
         <module name="EurekaServer02" />
         <module name="EurekaServer01" />
         <module name="UserProvdier01" />
+        <module name="ConfigServer001" />
         <module name="UserProvdier02" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ConfigServer001" options="-parameters" />
       <module name="EurekaServer01" options="-parameters" />
       <module name="EurekaServer02" options="-parameters" />
       <module name="UserProvdier01" options="-parameters" />
